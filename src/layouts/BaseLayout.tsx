@@ -1,3 +1,4 @@
+import FooterClientComponent from '@/components/component/FooterClientComponent'
 import HeaderClientComponent from '@/components/component/HeaderClientComponent'
 import { Outlet } from 'react-router-dom'
 
@@ -8,7 +9,7 @@ const BaseLayout = () => {
             <main>
                 <Outlet />
             </main>
-            <footer>Footer</footer>
+            <FooterClientComponent />
         </div>
     )
 }
