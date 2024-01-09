@@ -1,9 +1,10 @@
+import HeaderClientComponent from '@/components/component/HeaderClientComponent'
 import { Outlet } from 'react-router-dom'
 
 const BaseLayout = () => {
     return (
         <div>
-            <header>header</header>
+            <HeaderClientComponent />
             <main>
                 <Outlet />
             </main>
