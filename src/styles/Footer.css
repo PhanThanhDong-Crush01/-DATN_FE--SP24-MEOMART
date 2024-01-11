@@ -1,5 +1,24 @@
 .matpet_ft {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  
+  .cols-location--address {
+    color: gray;
+  }
+  
+  .matpet--cols--list {
     display: flex;
-   justify-content: space-between;
-    
-}
+    flex-direction: column;
+  }
+  
+  .cols--list--link {
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: gray;
+  }
+  
+  .cols--list--link:hover {
+    color: #de8ebe;
+  }
