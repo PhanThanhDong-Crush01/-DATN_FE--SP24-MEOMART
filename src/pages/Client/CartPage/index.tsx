@@ -75,7 +75,7 @@ const CartPage = () => {
                                 <td style={{ color: 'red', fontWeight: 900 }}>20.000.000đ</td>
                             </tr>
                             <tr>
-                                <td colspan={2} style={{ padding: 0 }}>
+                                <td colSpan={2} style={{ padding: 0 }}>
                                     <Link to={'/payment_information'}>
                                         <button
                                             type='submit'
