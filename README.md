@@ -1,25 +1,34 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Extra Small (XS) - Điện thoại di động:
+Độ rộng: Dưới 576px
 
-Currently, two official plugins are available:
+## Small (SM) - Máy tính bảng lớn, điện thoại lớn:
+Độ rộng: Từ 576px đến 767px
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Medium (MD) - Máy tính bảng, máy tính xách tay:
+Độ rộng: Từ 768px đến 991px
 
-## Expanding the ESLint configuration
+## Large (LG) - Máy tính xách tay lớn, máy tính để bàn:
+Độ rộng: Từ 992px đến 1199px
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Extra Large (XL) - Máy tính để bàn lớn:
+Độ rộng: 1200px trở lên
 
-- Configure the top-level `parserOptions` property like this:
+```css
+   @media only screen and (max-width: 576px) {
+  /* CSS áp dụng cho màn hình điện thoại di động */
+  .example-element {
+    width: 100%;
+  }
+}
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+  /* CSS áp dụng cho màn hình máy tính bảng lớn, điện thoại lớn */
+  .example-element {
+    width: 80%;
+  }
+}
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
