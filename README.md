@@ -1,22 +1,22 @@
 # React + TypeScript + Vite
 
 ## Extra Small (XS) - Điện thoại di động:
-Độ rộng: Dưới 576px
+- Độ rộng: Dưới 576px
 
 ## Small (SM) - Máy tính bảng lớn, điện thoại lớn:
-Độ rộng: Từ 576px đến 767px
+- Độ rộng: Từ 576px đến 767px
 
 ## Medium (MD) - Máy tính bảng, máy tính xách tay:
-Độ rộng: Từ 768px đến 991px
+- Độ rộng: Từ 768px đến 991px
 
 ## Large (LG) - Máy tính xách tay lớn, máy tính để bàn:
-Độ rộng: Từ 992px đến 1199px
+- Độ rộng: Từ 992px đến 1199px
 
 ## Extra Large (XL) - Máy tính để bàn lớn:
-Độ rộng: 1200px trở lên
+- Độ rộng: 1200px trở lên
 
 ```css
-   @media only screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   /* CSS áp dụng cho màn hình điện thoại di động */
   .example-element {
     width: 100%;
