@@ -1,6 +1,13 @@
 import '@/styles/Contact.css'
+import { useForm } from 'react-hook-form'
 
 const ContactPage = () => {
+    const { register, handleSubmit, formState } = useForm()
+    const { errors }: any = formState
+
+    const onSubmit = (data: any) => {
+        console.log(data) // You can handle form submission logic here
+    }
     return (
         <div className='contact'>
             <div className='grid grid-cols-2 gap-8'>
@@ -108,51 +115,62 @@ const ContactPage = () => {
                     </div>
                 </div>
                 <div className='contact-us'>
-                    <form action='#' method='POST' className='mt-16 wfull sm:mt-20'>
+                    <form onSubmit={handleSubmit(onSubmit)} className='mt-16 wfull sm:mt-20'>
                         <div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
                             <div className='sm:col-span-2'>
                                 <div className='mt-2.5'>
                                     <input
                                         type='text'
-                                        name='name'
                                         id='name'
                                         autoComplete='organization'
                                         placeholder='Họ và tên'
-                                        className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                                        className={`block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${
+                                            errors.name ? 'border-red-500' : ''
+                                        }`}
+                                        {...register('name', { required: 'Họ và tên không được trống' })}
                                     />
+                                    {errors.name && <span className='text-red-500'>{errors.name.message}</span>}
                                 </div>
                             </div>
                             <div className='mt-2.5'>
                                 <input
                                     type='text'
-                                    name='Phone'
                                     id='Phone'
                                     autoComplete='given-name'
                                     placeholder='Số điện thoại'
-                                    className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                                    className={`block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${
+                                        errors.phone ? 'border-red-500' : ''
+                                    }`}
+                                    {...register('phone', { required: 'Số điện thoại không được trống' })}
                                 />
+                                {errors.phone && <span className='text-red-500'>{errors.phone.message}</span>}
                             </div>
                             <div className='mt-2.5'>
                                 <input
                                     type='email'
-                                    name='email'
                                     id='email'
                                     autoComplete='email'
                                     placeholder='Email'
-                                    className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                                    className={`block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${
+                                        errors.email ? 'border-red-500' : ''
+                                    }`}
+                                    {...register('email', { required: 'Email không được trống' })}
                                 />
+                                {errors.email && <span className='text-red-500'>{errors.email.message}</span>}
                             </div>
 
                             <div className='sm:col-span-2'>
                                 <div className='mt-2.5'>
                                     <textarea
-                                        name='message'
                                         id='message'
                                         rows={4}
                                         placeholder='Tin nhắn'
-                                        className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                                        defaultValue={''}
+                                        className={`block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${
+                                            errors.message ? 'border-red-500' : ''
+                                        }`}
+                                        {...register('message', { required: 'Tin nhắn không được trống' })}
                                     />
+                                    {errors.name && <span className='text-red-500'>{errors.message.message}</span>}
                                 </div>
                             </div>
                         </div>
