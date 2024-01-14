@@ -24,6 +24,6 @@
             "@/*": ["./src/*"]
         }
     },
-    "include": ["src"],
+    "include": ["src", "node_modules/react-places-autocomplete"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
