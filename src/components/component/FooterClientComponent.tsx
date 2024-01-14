@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../styles/Footer.css'
 import { Link } from 'react-router-dom'
+import { Icon } from '@iconify/react/dist/iconify.js'
 const FooterClientComponent = () => {
     return (
         <div>
@@ -23,6 +24,24 @@ const FooterClientComponent = () => {
                         </div>
                         <div className='matpet--cols-email'>
                             <span>Email: </span> <span className='cols-location--address'>meowmartshop@fpt.edu.vn</span>
+                        </div>
+
+                        <div className='matpet--cols-social'>
+                            <div className='matpet--cols--fb'>
+                                <Link to='' className='matpet--cols--link'>
+                                    <Icon icon='ic:baseline-facebook' />
+                                </Link>
+                            </div>
+                            <div className='matpet--cols--tiktok'>
+                                <Link to='' className='matpet--cols--link'>
+                                    <Icon icon='ic:baseline-tiktok' />
+                                </Link>
+                            </div>
+                            <div className='matpet--cols--ytb'>
+                                <Link to='' className='matpet--cols--link'>
+                                    <Icon icon='mingcute:youtube-fill' />
+                                </Link>
+                            </div>
                         </div>
                     </div>
                     <div className='matpet--cols'>
@@ -80,6 +99,7 @@ const FooterClientComponent = () => {
                         </div>
                     </div>
                 </div>
+                <h2 className='ft--coppuright'>@2024 - Design by: MeowMart Team</h2>
             </footer>
         </div>
     )
