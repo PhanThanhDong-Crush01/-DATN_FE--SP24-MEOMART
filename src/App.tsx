@@ -22,8 +22,11 @@ function App() {
     }, [])
 
     return (
-        <div className='max-w-7xl m-auto'>
-            hí hí
+        <div className=' max-w-7xl mx-auto'>
+            <div>
+                <Link to='/'>Home</Link>
+                <Link to='/products'>Products</Link>
+            </div>
             <Routers />
         </div>
     )
