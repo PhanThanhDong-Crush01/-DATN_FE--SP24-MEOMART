@@ -1,4 +1,5 @@
 import BaseLayout from '@/layouts/BaseLayout'
+import SignupPage from '@/pages/Client/AuthPage/SignupPage'
 // import SigninPage from '@/pages/Client/AuthPage/Signin'
 // import SignupPage from '@/pages/Client/AuthPage/Signup'
 import CartPage from '@/pages/Client/CartPage'
@@ -26,8 +27,8 @@ const Routers = () => {
                 <Route path='introduce' element={<IntroducePage />} />
 
                 {/* auth */}
-                {/* <Route path='signin' element={<SigninPage />} />
-                <Route path='signup' element={<SignupPage />} /> */}
+                {/* <Route path='signin' element={<SigninPage />} /> */}
+                <Route path='signup' element={<SignupPage />} />
             </Route>
             {/* <Route path='admin' element={<AdminLayout />}>
                 <Route index element={<ManageDashboardPage />} />
