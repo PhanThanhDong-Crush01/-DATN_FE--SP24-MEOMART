@@ -1,155 +1,125 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form';
 
 const SignupPage = () => {
     return (
         <div>
-            <div className='h-screen'>
-                <div className='h-full'>
-                    <div className='g-6 flex h-full flex-wrap items-center justify-center lg:justify-between'>
-                        <div className='shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12'>
-                            <img
-                                src='https://azpet.com.vn/wp-content/uploads/2021/07/Anh-Long-Dai-Bicolor-M12192-1.jpg'
-                                className='w-full'
-                                alt='Sample image'
-                            />
-                        </div>
-
-                        <div className='mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12'>
-                            <form>
-                                <div className='flex flex-row items-center justify-center lg:justify-start'>
-                                    <p className='mb-0 mr-4 text-lg'>Sign up with</p>
-
-                                    <button
-                                        type='button'
-                                        data-te-ripple-init
-                                        data-te-ripple-color='light'
-                                        className='inlne-block mx-1 h-9 w-9 rounded-full bg-primary uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]'
-                                    >
-                                        <svg
-                                            xmlns='http://www.w3.org/2000/svg'
-                                            className='mx-auto h-3.5 w-3.5'
-                                            fill='currentColor'
-                                            viewBox='0 0 24 24'
-                                        >
-                                            <path d='M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z' />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type='button'
-                                        data-te-ripple-init
-                                        data-te-ripple-color='light'
-                                        className='inlne-block mx-1 h-9 w-9 rounded-full bg-primary uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]'
-                                    >
-                                        <svg
-                                            xmlns='http://www.w3.org/2000/svg'
-                                            className='mx-auto h-3.5 w-3.5'
-                                            fill='currentColor'
-                                            viewBox='0 0 24 24'
-                                        >
-                                            <path d='M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z' />
-                                        </svg>
-                                    </button>
-
-                                    <button
-                                        type='button'
-                                        data-te-ripple-init
-                                        data-te-ripple-color='light'
-                                        className='inlne-block mx-1 h-9 w-9 rounded-full bg-primary uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]'
-                                    >
-                                        <svg
-                                            xmlns='http://www.w3.org/2000/svg'
-                                            className='mx-auto h-3.5 w-3.5'
-                                            fill='currentColor'
-                                            viewBox='0 0 24 24'
-                                        >
-                                            <path d='M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z' />
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <div className='my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300'>
-                                    <p className='mx-4 mb-0 text-center font-semibold dark:text-white'>Or</p>
-                                </div>
-
-                                <div className='relative mb-6' data-te-input-wrapper-init>
-                                    <input
-                                        type='text'
-                                        className='peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0'
-                                        id='exampleFormControlInput2'
-                                        placeholder='Email address'
-                                    />
-                                    <label
-                                     
-                                        className='pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary'
-                                    >
-                                        User Name
-                                    </label>
-                                </div>
-
-                                <div className='relative mb-6' data-te-input-wrapper-init>
-                                    <input
-                                        type='text'
-                                        className='peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0'
-                                        id='exampleFormControlInput2'
-                                        placeholder='Email address'
-                                    />
-                                    <label
-                                     
-                                        className='pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary'
-                                    >
-                                        Email address
-                                    </label>
-                                </div>
-
-
-                                <div className='relative mb-6' data-te-input-wrapper-init>
-                                    <input
-                                        type='password'
-                                        className='peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0'
-                                        id='exampleFormControlInput22'
-                                        placeholder='Password'
-                                    />
-                                    <label
-                                       
-                                        className='pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary'
-                                    >
-                                        Password
-                                    </label>
-                                </div>
-
-                                <div className='relative mb-6' data-te-input-wrapper-init>
-                                    <input
-                                        type='text'
-                                        className='peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0'
-                                        id='exampleFormControlInput2'
-                                        placeholder='Email address'
-                                    />
-                                    <label
-                                
-                                        className='pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary'
-                                    >
-                                        Confirm Password
-                                    </label>
-                                </div>
-
-
-
-                                <div className='text-center lg:text-left'>
-                                    <button
-                                        type='button'
-                                        className='inline-block rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]'
-                                        data-te-ripple-init
-                                        data-te-ripple-color='light'
-                                    >
-                                        Đăng ký
-                                    </button>
-
-                                </div>
-                            </form>
-                        </div>
+            <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl'>
+                <div
+                    className=' hidden bg-cover lg:block lg:w-1/2 pt-4 pl-4'>
+                        <img src="https://i.pinimg.com/564x/f1/85/01/f18501bb5948f2789c8db87d1f376e42.jpg" alt="" />
                     </div>
+                <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
+                    <div className='flex justify-center mx-auto'>
+                        <img className='w-auto h-7 sm:h-8' src='https://merakiui.com/images/logo.svg' alt='' />
+                    </div>
+                    <p className='mt-3 text-xl text-center text-gray-600 dark:text-gray-200'>Đăng ký!</p>
+
+                    <div className='flex items-center justify-between mt-4'>
+                        <span className='w-1/5 border-b dark:border-gray-600 lg:w-1/4'></span>
+                        <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
+                    </div>
+                    <div className='mt-4'>
+                        <label
+                            className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
+                            for='LoggingName'>
+                            Họ Tên
+                        </label>
+                        <input
+                            id='LoggingName'
+                            className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300'
+                            type='text'
+                        />
+                    </div>
+
+
+                    <div className='mt-4'>
+                        <label
+                            className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
+                            for='LoggingEmailAddress'>
+                            Email 
+                        </label>
+                        <input
+                            id='LoggingEmailAddress'
+                            className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300'
+                            type='email'
+                        />
+                    </div>
+
+                    <div className='mt-4'>
+                        <div className='flex justify-between'>
+                            <label
+                                className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
+                                for='loggingPassword'>
+                                Mật khẩu
+                            </label>
+                        </div>
+
+                        <input
+                            id='loggingPassword'
+                            className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300'
+                            type='password'
+                        />
+                    </div>
+                    <div className='mt-4'>
+                        <div className='flex justify-between'>
+                            <label
+                                className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
+                                for='loggingPassword'>
+                                Xác nhận mật khẩu
+                            </label>
+                        </div>
+
+                        <input
+                            id='loggingPassword'
+                            className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300'
+                            type='password'
+                        />
+                    </div>
+
+                    <div className='mt-6'>
+                        <button className='w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50'>
+                            Đăng ký
+                        </button>
+                    </div>
+
+                    <div className='flex items-center justify-between mt-4'>
+                        <span className='w-1/5 border-b dark:border-gray-600 md:w-1/4'></span>
+
+                        <Link to='#' className='text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline'>
+                        Sign up with Google
+                        </Link>
+
+                        <span className='w-1/5 border-b dark:border-gray-600 md:w-1/4'></span>
+                    </div>
+                    <Link
+                        to='#'
+                        className='flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600'
+                    >
+                        <div className='px-4 py-2'>
+                            <svg className='w-6 h-6' viewBox='0 0 40 40'>
+                                <path
+                                    d='M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z'
+                                    fill='#FFC107'
+                                />
+                                <path
+                                    d='M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z'
+                                    fill='#FF3D00'
+                                />
+                                <path
+                                    d='M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z'
+                                    fill='#4CAF50'
+                                />
+                                <path
+                                    d='M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z'
+                                    fill='#1976D2'
+                                />
+                            </svg>
+                        </div>
+
+                        <span className='w-5/6 px-4 py-3 font-bold text-center'>Đăng ký với Google</span>
+                    </Link>
                 </div>
             </div>
         </div>
