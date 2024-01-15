@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button'
 import {
     Pagination,
@@ -574,7 +573,6 @@ const ListProduct = () => {
             </Pagination>
         </div>
     )
-
 }
 
 export default ListProduct

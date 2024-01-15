@@ -33,11 +33,9 @@ import ListProduct from './listProduct'
 const ShopPage = () => {
     return (
         <div className='grid grid-cols-4 gap-2 pt-2'>
-
             <ListCategory />
             {/* Product */}
             <ListProduct />
-
         </div>
     )
 }

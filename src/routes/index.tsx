@@ -30,10 +30,9 @@ const Routers = () => {
                 {/* auth */}
                 {/* <Route path='signin' element={<SigninPage />} />
                 <Route path='signup' element={<SignupPage />} /> */}
-                
             </Route>
             <Route path='signin' element={<SigninPage />} />
-                <Route path='signup' element={<SignupPage />} />
+            <Route path='signup' element={<SignupPage />} />
             {/* <Route path='admin' element={<AdminLayout />}>
                 <Route index element={<ManageDashboardPage />} />
                 <Route path='products' element={<ManagerProductPage />} />
