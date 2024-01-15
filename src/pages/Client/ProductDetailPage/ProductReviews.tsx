@@ -59,28 +59,32 @@ const ProductReviews = () => {
             </div>
 
             {/* Form product reviews */}
-            <form onSubmit={handleSubmit(onSubmit)} className='  p-5 rounded-md w-3/5 '>
+
+            <form onSubmit={handleSubmit(onSubmit)} className='  p-3 rounded-md w-3/5 '>
+                <div className='flex pt-3 pb-5'>
+                    <input type='checkbox' style={{ display: 'none' }} {...register('star')} />
+                    {/* Ngôi sao */}
+                    {starStates.map((isStarChecked, index) => (
+                        <label key={index}>
+                            <FontAwesomeIcon
+                                icon={faStar}
+                                color={isStarChecked ? 'yellow' : 'black'}
+                                onClick={() => handleStarClick(index)}
+                                style={{ cursor: 'pointer' }}
+                            />
+                        </label>
+                    ))}
+                </div>
                 <div className='col-span-full flex  gap-14 w-3/5'>
-                    <div className='flex pt-16'>
-                        <input type='checkbox' style={{ display: 'none' }} {...register('star')} />
-                        {/* Ngôi sao */}
-                        {starStates.map((isStarChecked, index) => (
-                            <label key={index}>
-                                <FontAwesomeIcon
-                                    icon={faStar}
-                                    color={isStarChecked ? 'yellow' : 'black'}
-                                    onClick={() => handleStarClick(index)}
-                                    style={{ cursor: 'pointer' }}
-                                />
-                            </label>
-                        ))}
-                    </div>
+
                     <div>
                         <label htmlFor='cover-photo' className='block text-sm font-medium leading-6 text-gray-900'>
                             Hình ảnh
                         </label>
                         <div className='mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10'>
-                            <div className='text-center w-28'>
+
+                            <div className='text-center w-36'>
+
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
                                     width='16'
@@ -93,7 +97,9 @@ const ProductReviews = () => {
                                     <path d='M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z' />
                                 </svg>
 
-                                <div className='mt-4 flex text-sm leading-6 text-gray-600'>
+
+                                <div className='mt-2 flex text-sm leading-6 text-gray-600'>
+
                                     <label
                                         htmlFor='file-upload'
                                         className='relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500'
@@ -112,7 +118,9 @@ const ProductReviews = () => {
                                                 <img
                                                     src={URL.createObjectURL(selectedImage)}
                                                     alt='Preview'
-                                                    width='200'
+
+                                                    width='64'
+
                                                 />
                                             </div>
                                         )}
@@ -168,7 +176,9 @@ const ProductReviews = () => {
                         </div>
                     </div>
                 </div>
-                <div className=' '>
+
+                <div className='pt-5 '>
+
                     <label htmlFor='about' className='block text-sm font-medium leading-6 text-gray-900'>
                         Nhận xét
                     </label>
@@ -246,11 +256,21 @@ const ProductReviews = () => {
                             <path d='M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z' />
                         </svg>
                     </div>
-                    <div className='flex'>
-                        <input type='image' src='https://picsum.photos/100/160' alt='' className='basis-1/2 m-5' />
-                        <iframe src='https://www.youtube.com/embed/dmt5iMpo-34' className='basis-1/2 m-5'></iframe>
+
+                    <div className='flex gap-5'>
+                        <input
+                            type='image'
+                            src='https://picsum.photos/70/100'
+                            alt=''
+                            className='basis-1/2 h-44  rounded-md'
+                        />
+                        <iframe
+                            src='https://www.youtube.com/embed/dmt5iMpo-34'
+                            className='basis-1/2  h-44 rounded-md'
+                        ></iframe>
                     </div>
-                    <p className='capitalize hover:uppercase'>
+                    <p className='capitalize '>
+
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum reiciendis praesentium assumenda
                         veniam optio. Ipsum, nihil iure! Voluptatem facilis expedita, asperiores laudantium quasi
                         aliquam ullam officiis maiores iusto error illo.
