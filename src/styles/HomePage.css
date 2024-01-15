@@ -4,6 +4,7 @@
     height: 40px;
     display: flex;
     align-items: center;
+    margin: 20px 0; 
   }
   
   .main__hompage--category {
@@ -32,22 +33,34 @@
   }
   
   .products__new--info {
+    
     text-decoration: none;
   }
   
   .product__new--id, .product__new--price {
     color: #de8ebe;
+    padding-top: 10px;
   }
   
   .product__new--id {
     font-size: 12px;
     margin-bottom: 5px;
   }
+
+  .products__new--item {
+     white-space: nowrap;/* thêm để tên không bị xuống dòng */
+     overflow: hidden; /*thêm để tên không bị tràn ra ngoài thẻ cha */
+    
+  }
   
   .product__new--name {
     font-size: 24px;
     margin: 5px 0;
     color: black;
+    white-space: nowrap;
+    overflow: hidden; /*thêm để tên không bị tràn ra ngoài thẻ cha */
+    text-overflow: ellipsis; /* hiển thị dấu 3 châm*/
+    max-width: 100%;
   }
   
   .product__new--price {
@@ -67,6 +80,7 @@
     text-decoration: none;
     background-color: #de8ebe;
     color: white;
+    border: 1px dashed white;
     padding: 10px 20px;
     border-radius: 10px;
   }

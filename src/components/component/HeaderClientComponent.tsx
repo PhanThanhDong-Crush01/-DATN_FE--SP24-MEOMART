@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/react'
 import { Link } from 'react-router-dom'
 import '../../styles/Header.css'
+import '../../Js/SlideShow.js'
 const HeaderClientComponent = () => {
     return (
         <div>
@@ -119,22 +120,6 @@ const HeaderClientComponent = () => {
                                         alt='Slide 4'
                                     />
                                 </div>
-                            </div>
-                        </div>
-                        <div className='categories_searchs'>
-                            <div className='categories_search'>
-                                <ul className='product-categories'>
-                                    <li className='category'>
-                                        <div className='all_categories'>
-                                            All Categories <Icon icon='ci:line-l' />
-                                        </div>
-
-                                        <ul className='sub-categories'>
-                                            <li>Danh mục 1</li>
-                                            <li>Danh mục 2</li>
-                                        </ul>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>

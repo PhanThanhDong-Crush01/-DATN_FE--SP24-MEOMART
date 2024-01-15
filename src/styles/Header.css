@@ -33,6 +33,7 @@
      align-items: center;
   }
   .matpet-menu--link {
+    display: flex;align-items: center;
     text-decoration: none;
     color: black;
     font-size: 18px;
@@ -175,21 +176,17 @@
   .category:hover .sub-categories {
     display: block;
   }
-  
-  .categories_search {
-    display: flex;
-    margin: 20px 0;
 
+  .categories_searchs {
+    display: flex;
+    align-items: stretch;
+    justify-content: right;
+    margin: 20px;
   }
   
-  .form-search {
-    margin: 20px 0;
+  .product-categories {
+    padding-top: 5px;
   }
-  .form_search--products {
-    display: flex;
-  justify-content: left;
-  }
- 
   
   .profile--width {
     padding-top: 5px;

@@ -76,15 +76,12 @@ const ProductReviews = () => {
                     ))}
                 </div>
                 <div className='col-span-full flex  gap-14 w-3/5'>
-
                     <div>
                         <label htmlFor='cover-photo' className='block text-sm font-medium leading-6 text-gray-900'>
                             Hình ảnh
                         </label>
                         <div className='mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10'>
-
                             <div className='text-center w-36'>
-
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
                                     width='16'
@@ -97,9 +94,7 @@ const ProductReviews = () => {
                                     <path d='M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z' />
                                 </svg>
 
-
                                 <div className='mt-2 flex text-sm leading-6 text-gray-600'>
-
                                     <label
                                         htmlFor='file-upload'
                                         className='relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500'
@@ -118,9 +113,7 @@ const ProductReviews = () => {
                                                 <img
                                                     src={URL.createObjectURL(selectedImage)}
                                                     alt='Preview'
-
                                                     width='64'
-
                                                 />
                                             </div>
                                         )}
@@ -178,7 +171,6 @@ const ProductReviews = () => {
                 </div>
 
                 <div className='pt-5 '>
-
                     <label htmlFor='about' className='block text-sm font-medium leading-6 text-gray-900'>
                         Nhận xét
                     </label>
@@ -270,7 +262,6 @@ const ProductReviews = () => {
                         ></iframe>
                     </div>
                     <p className='capitalize '>
-
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum reiciendis praesentium assumenda
                         veniam optio. Ipsum, nihil iure! Voluptatem facilis expedita, asperiores laudantium quasi
                         aliquam ullam officiis maiores iusto error illo.
