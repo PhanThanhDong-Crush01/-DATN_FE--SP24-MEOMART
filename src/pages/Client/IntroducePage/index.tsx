@@ -5,7 +5,7 @@ const IntroducePage = () => {
     const datadog = [
         {
             id: 1,
-            name: 'BENGAL',
+            name: 'BA TƯ',
             price: 123456,
             image: 'https://azpet.com.vn/wp-content/uploads/2021/06/meo-my-long-ngan.jpg'
         },
@@ -17,13 +17,13 @@ const IntroducePage = () => {
         },
         {
             id: 3,
-            name: 'SOMALI',
+            name: 'ANH LÔNG DÀI',
             price: 123456,
             image: 'https://azpet.com.vn/wp-content/uploads/2021/06/Ragdoll.jpg'
         },
         {
             id: 4,
-            name: 'TRAN DUC BO',
+            name: 'XIÊM',
             price: 123456,
             image: 'https://azpet.com.vn/wp-content/uploads/2021/06/meo-rung-na-uy.jpg'
         }
@@ -32,27 +32,27 @@ const IntroducePage = () => {
     const seruices = [
         {
             id: 1,
-            name: 'CAT DAYCARE',
+            name: 'CHĂM SÓC TRONG NGÀY',
             price: 29,
-            des: '$15 for full day on weekends'
+            des: '200.000Đ cho cả ngày vào cuối tuần'
         },
         {
             id: 2,
-            name: 'CAT DAYCARE',
+            name: 'CHĂM SÓC TRONG NGÀY',
             price: 29,
-            des: '$15 for full day on weekends'
+            des: '200.000Đ cho cả ngày vào cuối tuần'
         },
         {
             id: 3,
-            name: 'CAT DAYCARE',
+            name: 'CHĂM SÓC TRONG NGÀY',
             price: 29,
-            des: '$15 for full day on weekends'
+            des: '200.000Đ cho cả ngày vào cuối tuần'
         },
         {
             id: 4,
-            name: 'CAT DAYCARE',
+            name: 'CHĂM SÓC TRONG NGÀY',
             price: 29,
-            des: '$15 for full day on weekends'
+            des: '200.000Đ cho cả ngày vào cuối tuần'
         }
     ]
 
@@ -61,7 +61,7 @@ const IntroducePage = () => {
             <div>
                 <div className='md:flex justify-center items-center gap-[5px] w-full text-center py-[20px] '>
                     <div>
-                        <p className='text-[20px] font-bold'>FOOD STORE :</p>
+                        <p className='text-[20px] font-bold'>CỬA HÀNG THỰC PHẨM :</p>
                     </div>
                     <div className='flex justify-center'>
                         <img src='https://matpetfamily.com/wp-content/uploads/2018/01/store1.jpg' alt='' />
@@ -71,7 +71,7 @@ const IntroducePage = () => {
                         <img src='https://matpetfamily.com/wp-content/uploads/2018/01/store5.jpg' alt='' />
                     </div>
                     <div>
-                        <p className='font-[800] py-[10px]'>Need help choosing the perfect food for your pet?</p>
+                        <p className='font-[800] py-[10px]'>Cần giúp đỡ trong việc lựa chọn thức ăn hoàn hảo cho thú cưng của bạnet?</p>
                     </div>
                     <div>
                         <a
@@ -85,13 +85,13 @@ const IntroducePage = () => {
                 <div className=" flex items-center  bg-[url('https://xommeo.com/wp-content/uploads/2018/06/meo-anh-long-ngan2.jpg')] w-full  lg:h-[700px] sm:h-[400px] h-[400px]">
                     <div className='md:pl-[200px] text-center'>
                         <img src='https://matpetfamily.com/wp-content/uploads/2018/01/hot-line.png' alt='' />
-                        <p className='text-[40px] font-[700]  text-white'>PHU QUOC CAT</p>
-                        <p className='text-[20px] text-white py-[10px]'>which is the best meomeo meo</p>
+                        <p className='text-[40px] font-[700]  text-white'>MÈO PHÚ QUỐC</p>
+                        <p className='text-[20px] text-white py-[10px]'>meo meo nào là hay nhất</p>
                         <a
                             href=''
                             className='border-dashed border-[1.5px] bg-[#de8ebe] border-[#ffff] hover:bg-[#de8ebe] text-white text-[20px] p-[5px] rounded-lg'
                         >
-                            READ MORE
+                            ĐỌC THÊM
                         </a>
                     </div>
                 </div>
@@ -100,12 +100,12 @@ const IntroducePage = () => {
                         <img src='https://azpet.com.vn/wp-content/uploads/2021/06/Turkish-Angora.jpg' alt='' />
                     </div>
                     <div className='py-[100px]'>
-                        <h1 className='text-[50px] font-[800]'>Get Access To</h1>
-                        <h1 className='text-[30px] text-[#DE8EBE] py-[10px]'>PUBLIC PLACES WITH YOUR CAT!</h1>
+                        <h1 className='text-[50px] font-[800]'>Được tiếp cận với</h1>
+                        <h1 className='text-[30px] text-[#DE8EBE] py-[10px]'>ĐỊA ĐIỂM CÔNG CỘNG VỚI MÈO CỦA BẠN!</h1>
                         <p className='pb-[20px]'>
-                            Register today and join the largest Emotional Support Animal database in the country. We
-                            will update you anytime the Federal Laws change, as well as other pertinent info related to
-                            your Emotional Support Animal.
+                            Hãy đăng ký ngay hôm nay và tham gia cơ sở dữ liệu Động vật hỗ trợ cảm xúc lớn nhất trong
+                            nước. Chúng tôi sẽ cập nhật cho bạn bất cứ khi nào Luật Liên bang thay đổi, cũng như các
+                            thông tin thích hợp khác liên quan đến Động vật hỗ trợ tinh thần của bạn.
                         </p>
                         <div className='border-dashed border-[1.5px] bg-[#de8ebe] border-[#ffff] hover:bg-[#de8ebe] w-[300px] text-white text-[20px]  flex justify-center p-[5px] rounded-lg'>
                             <a href=''>
@@ -114,29 +114,29 @@ const IntroducePage = () => {
                                     src='https://haustiere.7uptheme.net/wp-content/uploads/2018/01/dog-bon.png'
                                     alt=''
                                 />
-                                <p> RIGISTER FOR FREE</p>
+                                <p> ĐĂNG KÍ MIỄN PHÍ</p>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div className=' md:grid grid-cols-2 items-center md:mx-[160px] px-[40px] rounded-lg py-[100px] border-[2px] border-[#de8ebe] '>
                     <div>
-                        <h1 className='text-[60px] font-[1000] md:w-[300px]'>Cat Care Service</h1>
+                        <h1 className='text-[60px] font-[1000] md:w-[300px]'>Dịch vụ chăm sóc</h1>
                         <h2 className='text-[30px] font-[1000] py-[10px] text-[#DE8EBE]'>
-                            PLEASE CALL NOW: 090 1876 345
+                            VUI LÒNG GỌI NGAY: 090 1876 345
                         </h2>
                         <p className='text-[17px] pb-[20px]'>
-                            Emotional support cats are often identified by wearing an emotional support cat vest or tag,
-                            letting the public know that it is an emotional support cat; otherwise, their handlers will
-                            find themselves having to explain that their cat is an emotional support cat. Some
-                            businesses, such as airlines, prefer to see an identification card or vest that indicates
-                            that the cat is an emotional support cat.
+                            Mèo hỗ trợ tinh thần thường được xác định bằng cách mặc áo vest hoặc thẻ mèo hỗ trợ tinh
+                            thần, để công chúng biết rằng đó là mèo hỗ trợ tinh thần; nếu không, người nuôi chúng sẽ
+                            phải giải thích rằng con mèo của họ là con mèo hỗ trợ tinh thần. Một số doanh nghiệp, chẳng
+                            hạn như các hãng hàng không, thích xem thẻ nhận dạng hoặc áo vest cho biết con mèo là con
+                            mèo hỗ trợ tinh thần.
                         </p>
                         <a
                             href=''
                             className='border-dashed border-[1.5px] bg-[#de8ebe] border-[#ffff] hover:bg-[#de8ebe] text-white text-[20px] p-[5px] rounded-lg'
                         >
-                            READ MORE
+                            ĐỌC THÊM
                         </a>
                     </div>
                     <div className='w-[470px]'>
@@ -148,7 +148,7 @@ const IntroducePage = () => {
                 </div>
                 <div className=' py-[100px]'>
                     <div className=' flex  justify-center items-center md:ml-[200px]'>
-                        <div className='text-center md:w-[500px] text-[50px] font-[1000] '>Meet The Cats</div>
+                        <div className='text-center md:w-[500px] text-[50px] font-[1000] '>Gặp gỡ những chú mèo</div>
                         <div className='md:w-[1000px] grid grid-cols-2 items-center '>
                             <div className='border-[1px] border-[#de8ebe]'></div>
                             <div className='w-[150px]'>
@@ -158,27 +158,27 @@ const IntroducePage = () => {
                     </div>
                     <div className='md:flex justify-between items-center  md:mx-[200px]'>
                         <div className='py-[20px] text-center'>
-                            <p className='text-[30px] text-[#DE8EBE]  font[1000]'>OF HAUSTIERE</p>
+                            <p className='text-[30px] text-[#DE8EBE]  font[1000]'>CỦA HAUSTIERE</p>
                         </div>
                         <div className='flex justify-center items-center'>
                             <button
                                 type='button'
                                 className='py-2.5 px-5 me-2 mb-2 text-sm  text-white focus:outline-none bg-[#DE8EBE] rounded-lg border border-gray-200 hover:bg-[#DE8EBE] hover:text-white focus:z-10 focus:ring-4 '
                             >
-                                NEW ARRIVAL
+                                HÀNG MỚI VỀ
                             </button>
 
                             <button
                                 type='button'
                                 className='text-[#DE8EBE] font-[700] bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100  rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-800 dark:bg-white dark:border-gray-700 dark:text-gray-900 dark:hover:bg-gray-200 me-2 mb-2'
                             >
-                                BEST SELLER
+                                MUA NHIỀU NHẤT
                             </button>
                             <button
                                 type='button'
                                 className='text-[#DE8EBE] font-[700] bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100  rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-800 dark:bg-white dark:border-gray-700 dark:text-gray-900 dark:hover:bg-gray-200 me-2 mb-2'
                             >
-                                SPECIAL
+                                ĐẶC BIỆT
                             </button>
                         </div>
                     </div>
@@ -208,15 +208,15 @@ const IntroducePage = () => {
                     <div className="mt-[100px] bg-[url('https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-animal-kitten-yellow-cartoon-banner-image_782549.jpg')]  h-[563.8px]">
                         <div className='flex items-center h-[515.8px]'>
                             <div className='md:ml-[150px] '>
-                                <h1 className='text-[#000] text-[50px] font-[1000]'>Kennel Club</h1>
-                                <h3 className='text-[#DE8EBE] text-[25px] py-[20px] font-[800]'>CAT TRAINING</h3>
+                                <h1 className='text-[#000] text-[50px] font-[1000]'>Cat Breed Club</h1>
+                                <h3 className='text-[#DE8EBE] text-[25px] py-[20px] font-[800]'>Đào tạo mèo</h3>
                                 <div className='flex gap-[15px]'>
                                     <div className='clock day text-white '>
                                         <strong className='block p-[30px] rounded-lg bg-black text-3xl font-bold'>
                                             00
                                         </strong>
                                         <span className='block text-black text-center text-[20px] font-[800] pt-[10px]'>
-                                            DAYS
+                                            Ngày
                                         </span>
                                     </div>
                                     <div className='clock day text-white '>
@@ -224,7 +224,7 @@ const IntroducePage = () => {
                                             00
                                         </strong>
                                         <span className='block text-black text-center text-[20px] font-[800] pt-[10px]'>
-                                            HOURS
+                                            Giờ
                                         </span>
                                     </div>
                                     <div className='clock day text-white '>
@@ -232,7 +232,7 @@ const IntroducePage = () => {
                                             00
                                         </strong>
                                         <span className='block text-black text-center text-[20px] font-[800] pt-[10px]'>
-                                            MINUTES
+                                            Phút
                                         </span>
                                     </div>
                                     <div className='clock day text-white '>
@@ -240,7 +240,7 @@ const IntroducePage = () => {
                                             00
                                         </strong>
                                         <span className='block text-black text-center text-[20px] font-[800] pt-[10px]'>
-                                            SECONDS
+                                            Giây
                                         </span>
                                     </div>
                                 </div>
@@ -248,7 +248,7 @@ const IntroducePage = () => {
                         </div>
                         <div className='bg-[#000000]/50 py-[5px]'>
                             <h1 className='text-[#DE8EBE] mx-[100px] text-[25px] font-[1000]'>
-                                MORE ABOUT PET SITTING
+                                THÊM VỀ VIỆC NGỒI THÚ CƯNG
                             </h1>
                         </div>
                     </div>
@@ -267,14 +267,14 @@ const IntroducePage = () => {
                                 {seruices.map((item: any) => (
                                     <div className='group relative text-center border-[1px] bg-[#FFFF]/20 border-[#c1c0c0] px-[20px] py-[50px]'>
                                         <h1 className='text-[25px] text-[#333333] font-[700]'>{item.name}</h1>
-                                        <p className='text-[20px] text-[#999999] font-[700]'>full day</p>
+                                        <p className='text-[20px] text-[#999999] font-[700]'>Cả ngày</p>
                                         <h3 className='text-[30px] text-[#DE8EBE] font-[1000]'>${item.price}.00</h3>
                                         <p className='text-[#555555] py-[10px]'>{item.des}</p>
                                         <a
                                             href=''
                                             className='border-dashed border-[1.5px] bg-[#de8ebe] border-[#ffff] hover:bg-[#de8ebe] text-white text-[20px] p-[5px] rounded-lg'
                                         >
-                                            READ MORE
+                                            ĐỌC THÊM
                                         </a>
                                     </div>
                                 ))}
@@ -289,7 +289,7 @@ const IntroducePage = () => {
                         <div className='text-[40px] font-[1000]'>Haustiere</div>
                         <div className='border-[1px] border-[#de8ebe] w-[800px]'></div>
                     </div>
-                    <div className='text-[20px] text-center font-[1000] text-[#de8ebe]'>VIEW GALLERY</div>
+                    <div className='text-[20px] text-center font-[1000] text-[#de8ebe]'>XEM BỘ SƯU TẬP</div>
                     <div className='grid grid-cols-4 gap-[10px] mt-[20px]'>
                         <Image width={315} src='https://azpet.com.vn/wp-content/uploads/2022/03/M671-1.jpg' />
                         <Image width={315} src='https://azpet.com.vn/wp-content/uploads/2022/03/M12367-1.jpg' />
@@ -317,10 +317,10 @@ const IntroducePage = () => {
                 <div className='my-[40px]'>
                     <div className='flex items-center gap-[20px] pt-[40px]'>
                         <div className='border-[1px] border-[#de8ebe] w-[800px]'></div>
-                        <div className='text-[40px] font-[1000]'>Haustiere</div>
+                        <div className='text-[40px] font-[1000] '>Đội ngũ</div>
                         <div className='border-[1px] border-[#de8ebe] w-[800px]'></div>
                     </div>
-                    <div className='text-[20px] text-center font-[1000] text-[#de8ebe]'>OUR TEAM</div>
+                    <div className='text-[20px] text-center font-[1000] text-[#de8ebe]'>Của chúng tôi</div>
                     <div className='md:flex justify-center text-center mt-[30px]'>
                         <img src='https://matpetfamily.com/wp-content/uploads/2018/01/team-01.jpg' alt='' />
                         <img src='https://matpetfamily.com/wp-content/uploads/2018/01/team-02.jpg' alt='' />
@@ -339,7 +339,7 @@ const IntroducePage = () => {
                             <div className='absolute inset-0 bg-[#DE8EBE] w-[300px] h-[200px] text-white flex items-center'>
                                 <div>
                                     <h1 className='text-center text-[30px] font-[1000] '>NEWS</h1>
-                                    <p className='text-center'>The latest news in mental health research</p>
+                                    <p className='text-center'>Tin tức mới nhất về nghiên cứu sức khỏe tâm thần</p>
                                 </div>
                             </div>
                         </div>
@@ -366,21 +366,21 @@ const IntroducePage = () => {
                                 <p className='my-[20px] w-full border-dashed border-[1px] border-white'></p>
 
                                 <h1 className='text-[23px] text-white font-[1000]'>
-                                    DOMESTIC ANIMALS CAN SAVE YOU FROM LONELINESS
+                                    ĐỘNG VẬT TRONG NHÀ CÓ THỂ GIÚP BẠN KHỎI CÔ ĐƠN
                                 </h1>
                                 <p className='my-[20px] w-full border-dashed border-[1px] border-white'></p>
 
                                 <h1 className='text-[23px] text-white font-[1000]'>
-                                    BETTER RELATIONSHIP BETWEEN PEOPLE & CATS
+                                    MỐI QUAN HỆ TỐT HƠN GIỮA NGƯỜI VÀ MÈO
                                 </h1>
                                 <p className='my-[20px] w-full border-dashed border-[1px] border-white'></p>
 
                                 <h1 className='text-[23px] text-white font-[1000]'>
-                                    HELPING YOU GET RID OF YOUR CAT’S BAD BEHAVIOR
+                                    GIÚP BẠN LOẠI BỎ HÀNH VI Xấu CỦA MÈO
                                 </h1>
                                 <p className='my-[20px] w-full border-dashed border-[1px] border-white'></p>
 
-                                <h1 className='text-[23px] text-white font-[1000]'>SEE MORE NEWS</h1>
+                                <h1 className='text-[23px] text-white font-[1000]'>XEM THÊM TIN TỨC</h1>
                                 <p className='my-[20px] w-full border-dashed border-[1px] border-white'></p>
                             </div>
                         </div>
