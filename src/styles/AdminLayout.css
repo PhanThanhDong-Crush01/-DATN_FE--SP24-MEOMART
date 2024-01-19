@@ -1,0 +1,9 @@
+.bg-main {
+    background-color: #f1f4f9;
+}
+
+.dark-mode {
+    background-color: #333; /* Change this to your desired dark background color */
+    color: #fff; /* Change this to your desired text color in dark mode */
+    /* Add any other styles for dark mode */
+}

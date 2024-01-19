@@ -71,7 +71,9 @@ const IntroducePage = () => {
                         <img src='https://matpetfamily.com/wp-content/uploads/2018/01/store5.jpg' alt='' />
                     </div>
                     <div>
-                        <p className='font-[800] py-[10px]'>Cần giúp đỡ trong việc lựa chọn thức ăn hoàn hảo cho thú cưng của bạnet?</p>
+                        <p className='font-[800] py-[10px]'>
+                            Cần giúp đỡ trong việc lựa chọn thức ăn hoàn hảo cho thú cưng của bạnet?
+                        </p>
                     </div>
                     <div>
                         <a
