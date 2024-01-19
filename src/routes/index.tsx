@@ -1,4 +1,11 @@
+import AdminLayout from '@/layouts/AdminLayout'
 import BaseLayout from '@/layouts/BaseLayout'
+import Dashboard from '@/pages/Admin/Dashboard'
+import ListBill from '@/pages/Admin/ListBill'
+import ListCategory from '@/pages/Admin/ListCategory'
+import ListProducts from '@/pages/Admin/ListProducts'
+import ListTypeVoucher from '@/pages/Admin/ListTypeVoucher'
+import ListVoucher from '@/pages/Admin/ListVoucher'
 import SigninPage from '@/pages/Client/AuthPage/SigninPage'
 import SignupPage from '@/pages/Client/AuthPage/SignupPage'
 // import SigninPage from '@/pages/Client/AuthPage/Signin'
@@ -33,10 +40,23 @@ const Routers = () => {
             </Route>
             <Route path='signin' element={<SigninPage />} />
             <Route path='signup' element={<SignupPage />} />
-            {/* <Route path='admin' element={<AdminLayout />}>
-                <Route index element={<ManageDashboardPage />} />
-                <Route path='products' element={<ManagerProductPage />} />
-            </Route> */}
+            <Route path='admin' element={<AdminLayout />}>
+                <Route index element={<Dashboard />} />
+                <Route path='/admin/products' element={<ListProducts />} />
+                {/* <Route path='/admin/products/:id/edit' element={<EditProduct />}/> */}
+                {/* <Route path='/admin/products/add' element={<AddProduct />}/> */}
+                <Route path='/admin/categories' element={<ListCategory />} />
+                {/* <Route path='/admin/categories/:id/edit' element={<EditCategory />}/> */}
+                {/* <Route path='/admin/categories/add' element={<AddCategory />}/> */}
+                <Route path='/admin/voucher' element={<ListVoucher />} />
+                {/* <Route path='/admin/voucher/:id/edit' element={<EditListVoucher />}/> */}
+                {/* <Route path='/admin/voucher/add' element={<AddListVoucher />}/> */}
+                <Route path='/admin/type_voucher' element={<ListTypeVoucher />} />
+                {/* <Route path='/admin/type_voucher/:id/edit' element={<EditListTypeVoucher />}/> */}
+                {/* <Route path='/admin/type_voucher/add' element={<AddListTypeVoucher />}/> */}
+                <Route path='/admin/bill' element={<ListBill />} />
+                {/* <Route path='/admin/bill/:id/edit' element={<EditListBill />}/> */}
+            </Route>
         </Routes>
     )
 }

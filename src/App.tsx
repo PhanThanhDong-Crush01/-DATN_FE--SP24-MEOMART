@@ -23,7 +23,7 @@ function App() {
     }, [])
 
     return (
-        <div className=' max-w-7xl mx-auto'>
+        <div className='max-w-full'>
             <Routers />
         </div>
     )

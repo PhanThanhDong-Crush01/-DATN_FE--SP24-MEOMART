@@ -4,8 +4,9 @@ import { Outlet } from 'react-router-dom'
 
 const BaseLayout = () => {
     return (
-        <div>
+        <div className='max-w-7xl mx-auto'>
             <HeaderClientComponent />
+
             <main>
                 <Outlet />
             </main>
