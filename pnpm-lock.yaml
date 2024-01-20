@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@ant-design/icons':
+    specifier: ^5.2.6
+    version: 5.2.6(react-dom@18.2.0)(react@18.2.0)
   '@fortawesome/free-solid-svg-icons':
     specifier: ^6.5.1
     version: 6.5.1
@@ -86,6 +89,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-highlight-words:
+    specifier: ^0.20.0
+    version: 0.20.0(react@18.2.0)
   react-hook-form:
     specifier: ^7.48.2
     version: 7.48.2(react@18.2.0)
@@ -243,7 +249,7 @@ packages:
     dependencies:
       '@ant-design/colors': 7.0.2
       '@ant-design/icons-svg': 4.3.1
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.8
       classnames: 2.5.1
       rc-util: 5.38.1(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
@@ -5162,6 +5168,10 @@ packages:
     dependencies:
       function-bind: 1.1.2
 
+  /highlight-words-core@1.2.2:
+    resolution: {integrity: sha512-BXUKIkUuh6cmmxzi5OIbUJxrG8OAk2MqoL1DtO3Wo9D2faJg2ph5ntyuQeLqaHJmzER6H5tllCDA9ZnNe9BVGg==}
+    dev: false
+
   /human-signals@2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
@@ -5635,6 +5645,10 @@ packages:
   /mdn-data@2.0.4:
     resolution: {integrity: sha512-iV3XNKw06j5Q7mi6h+9vbx23Tv7JkjEVgKHW4pimwyDGWm0OIQntJJ+u1C6mg6mK1EaTv42XQ7w76yuzH7M2cA==}
     dev: true
+
+  /memoize-one@4.0.3:
+    resolution: {integrity: sha512-QmpUu4KqDmX0plH4u+tf0riMc1KHE1+lw95cMrLlXQAFOx/xnBtwhZ52XJxd9X2O6kwKBqX32kmhbhlobD0cuw==}
+    dev: false
 
   /memoize-one@5.2.1:
     resolution: {integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==}
@@ -6609,6 +6623,17 @@ packages:
 
   /react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
+    dev: false
+
+  /react-highlight-words@0.20.0(react@18.2.0):
+    resolution: {integrity: sha512-asCxy+jCehDVhusNmCBoxDf2mm1AJ//D+EzDx1m5K7EqsMBIHdZ5G4LdwbSEXqZq1Ros0G0UySWmAtntSph7XA==}
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.0 || ^16.0.0-0 || ^17.0.0-0 || ^18.0.0-0
+    dependencies:
+      highlight-words-core: 1.2.2
+      memoize-one: 4.0.3
+      prop-types: 15.8.1
+      react: 18.2.0
     dev: false
 
   /react-hook-form@7.48.2(react@18.2.0):
