@@ -2,6 +2,7 @@ import AdminLayout from '@/layouts/AdminLayout'
 import BaseLayout from '@/layouts/BaseLayout'
 import Dashboard from '@/pages/Admin/Dashboard'
 import ListBill from '@/pages/Admin/ListBill'
+import BillDetail from '@/pages/Admin/ListBill/BillDetail'
 import ListCategory from '@/pages/Admin/ListCategory'
 import ListProducts from '@/pages/Admin/ListProducts'
 import ListTypeVoucher from '@/pages/Admin/ListTypeVoucher'
@@ -56,6 +57,7 @@ const Routers = () => {
                 {/* <Route path='/admin/type_voucher/add' element={<AddListTypeVoucher />}/> */}
                 <Route path='/admin/bill' element={<ListBill />} />
                 {/* <Route path='/admin/bill/:id/edit' element={<EditListBill />}/> */}
+                <Route path='/admin/bill/:id' element={<BillDetail />} />
             </Route>
         </Routes>
     )
