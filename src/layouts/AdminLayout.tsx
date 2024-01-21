@@ -9,7 +9,7 @@ const AdminLayout = () => {
             <div className=''>
                 <SidebarAdminComponent />
             </div>
-            <main className='w-[100%]'>
+            <main className='w-[80%]'>
                 <HeaderAdminComponents />
                 <div className='bg-main'>
                     <Outlet />
