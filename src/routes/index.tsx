@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout'
 import Dashboard from '@/pages/Admin/Dashboard'
 import ListBill from '@/pages/Admin/ListBill'
 import BillDetail from '@/pages/Admin/ListBill/BillDetail'
-import ListCategory from '@/pages/Admin/ListCategory'
+import ListCategory from '@/pages/Admin/Category'
 import ListProducts from '@/pages/Admin/ListProducts'
 import ListTypeVoucher from '@/pages/Admin/ListTypeVoucher'
 import ListVoucher from '@/pages/Admin/ListVoucher'
@@ -21,6 +21,8 @@ import ProductDetailPage from '@/pages/Client/ProductDetailPage'
 import ShopPage from '@/pages/Client/ShopPage'
 
 import { Route, Routes } from 'react-router-dom'
+import AddCategory from '@/pages/Admin/Category/AddCategory'
+import EditCategory from '@/pages/Admin/Category/EditCategory'
 
 const Routers = () => {
     return (
@@ -48,7 +50,8 @@ const Routers = () => {
                 {/* <Route path='/admin/products/add' element={<AddProduct />}/> */}
                 <Route path='/admin/categories' element={<ListCategory />} />
                 {/* <Route path='/admin/categories/:id/edit' element={<EditCategory />}/> */}
-                {/* <Route path='/admin/categories/add' element={<AddCategory />}/> */}
+                <Route path='/admin/categories/edit/:id' element={<EditCategory />} />
+                <Route path='/admin/categories/add' element={<AddCategory />} />
                 <Route path='/admin/voucher' element={<ListVoucher />} />
                 {/* <Route path='/admin/voucher/:id/edit' element={<EditListVoucher />}/> */}
                 {/* <Route path='/admin/voucher/add' element={<AddListVoucher />}/> */}
