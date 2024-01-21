@@ -1,24 +1,24 @@
-import { useRef, useState } from 'react';
-import { SearchOutlined } from '@ant-design/icons';
-import type { GetRef, TableColumnsType, TableColumnType } from 'antd';
-import { Button, Input, Popconfirm, Space, Table, message } from 'antd';
-import type { FilterDropdownProps } from 'antd/es/table/interface';
-import Highlighter from 'react-highlight-words';
-import { Link } from 'react-router-dom';
+import { useRef, useState } from 'react'
+import { SearchOutlined } from '@ant-design/icons'
+import type { GetRef, TableColumnsType, TableColumnType } from 'antd'
+import { Button, Input, Popconfirm, Space, Table, message } from 'antd'
+import type { FilterDropdownProps } from 'antd/es/table/interface'
+import Highlighter from 'react-highlight-words'
+import { Link } from 'react-router-dom'
 
-type InputRef = GetRef<typeof Input>;
+type InputRef = GetRef<typeof Input>
 
 interface DataType {
-    key: string;
-    status: string;
-    codeVc: number;
-    decrease: number;
-    expiry: string;
-    conditions: number;
-    idTypeVc: string;
+    key: string
+    status: string
+    codeVc: number
+    decrease: number
+    expiry: string
+    conditions: number
+    idTypeVc: string
 }
 
-type DataIndex = keyof DataType;
+type DataIndex = keyof DataType
 
 const data: DataType[] = [
     {
@@ -26,47 +26,42 @@ const data: DataType[] = [
         status: 'John Brown',
         codeVc: 20,
         decrease: 32,
-        expiry: "abcd èhkkjj",
+        expiry: 'abcd èhkkjj',
         conditions: 45,
-        idTypeVc: 'idtype123o3i',
+        idTypeVc: 'idtype123o3i'
     },
     {
         key: '2',
         status: 'John Brown',
         codeVc: 20,
         decrease: 32,
-        expiry: "abcd èhkkjj",
+        expiry: 'abcd èhkkjj',
         conditions: 45,
-        idTypeVc: 'idtype123o3i',
-    },
-];
+        idTypeVc: 'idtype123o3i'
+    }
+]
 const Vorcher = () => {
-    const [searchText, setSearchText] = useState('');
-    const [searchedColumn, setSearchedColumn] = useState('');
-    const searchInput = useRef<InputRef>(null);
-
+    const [searchText, setSearchText] = useState('')
+    const [searchedColumn, setSearchedColumn] = useState('')
+    const searchInput = useRef<InputRef>(null)
 
     const confirmDelete = async (productId: string) => {
-        message.success("xoá thành công")
-    };
+        message.success('xoá thành công')
+    }
     const cancelDelete = () => {
-        message.error('Product deletion cancelled');
-    };
+        message.error('Product deletion cancelled')
+    }
 
-    const handleSearch = (
-        selectedKeys: string[],
-        confirm: FilterDropdownProps['confirm'],
-        dataIndex: DataIndex,
-    ) => {
-        confirm();
-        setSearchText(selectedKeys[0]);
-        setSearchedColumn(dataIndex);
-    };
+    const handleSearch = (selectedKeys: string[], confirm: FilterDropdownProps['confirm'], dataIndex: DataIndex) => {
+        confirm()
+        setSearchText(selectedKeys[0])
+        setSearchedColumn(dataIndex)
+    }
 
     const handleReset = (clearFilters: () => void) => {
-        clearFilters();
-        setSearchText('');
-    };
+        clearFilters()
+        setSearchText('')
+    }
 
     const getColumnSearchProps = (dataIndex: DataIndex): TableColumnType<DataType> => ({
         filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters, close }) => (
@@ -81,37 +76,37 @@ const Vorcher = () => {
                 />
                 <Space>
                     <Button
-                        type="primary"
+                        type='primary'
                         onClick={() => handleSearch(selectedKeys as string[], confirm, dataIndex)}
                         icon={<SearchOutlined />}
-                        size="small"
+                        size='small'
                         style={{ width: 90 }}
                     >
                         Search
                     </Button>
                     <Button
                         onClick={() => clearFilters && handleReset(clearFilters)}
-                        size="small"
+                        size='small'
                         style={{ width: 90 }}
                     >
                         Reset
                     </Button>
                     <Button
-                        type="link"
-                        size="small"
+                        type='link'
+                        size='small'
                         onClick={() => {
-                            confirm({ closeDropdown: false });
-                            setSearchText((selectedKeys as string[])[0]);
-                            setSearchedColumn(dataIndex);
+                            confirm({ closeDropdown: false })
+                            setSearchText((selectedKeys as string[])[0])
+                            setSearchedColumn(dataIndex)
                         }}
                     >
                         Filter
                     </Button>
                     <Button
-                        type="link"
-                        size="small"
+                        type='link'
+                        size='small'
                         onClick={() => {
-                            close();
+                            close()
                         }}
                     >
                         close
@@ -119,9 +114,7 @@ const Vorcher = () => {
                 </Space>
             </div>
         ),
-        filterIcon: (filtered: boolean) => (
-            <SearchOutlined style={{ color: filtered ? '#1677ff' : undefined }} />
-        ),
+        filterIcon: (filtered: boolean) => <SearchOutlined style={{ color: filtered ? '#1677ff' : undefined }} />,
         onFilter: (value, record) =>
             record[dataIndex]
                 .toString()
@@ -138,35 +131,35 @@ const Vorcher = () => {
                 />
             ) : (
                 text
-            ),
-    });
+            )
+    })
 
     const columns: TableColumnsType<DataType> = [
         {
             title: '#',
             dataIndex: 'key',
             key: 'key',
-            width: '2%',
+            width: '2%'
         },
         {
             title: 'Status',
             dataIndex: 'status',
             key: 'status',
-            width: '20%',
+            width: '20%'
         },
         {
             title: 'codeVc',
             dataIndex: 'codeVc',
             key: 'codeVc',
             width: '20%',
-            ...getColumnSearchProps('codeVc'),
+            ...getColumnSearchProps('codeVc')
         },
         {
             title: 'decrease',
             dataIndex: 'decrease',
             key: 'decrease',
             width: '10%',
-            ...getColumnSearchProps('decrease'),
+            ...getColumnSearchProps('decrease')
         },
         {
             title: 'expiry',
@@ -175,7 +168,7 @@ const Vorcher = () => {
             width: '20%',
             ...getColumnSearchProps('expiry'),
             sorter: (a, b) => a.expiry.length - b.expiry.length,
-            sortDirections: ['descend', 'ascend'],
+            sortDirections: ['descend', 'ascend']
         },
         {
             title: 'conditions',
@@ -184,7 +177,7 @@ const Vorcher = () => {
             width: '10%',
             ...getColumnSearchProps('conditions'),
             sorter: (a, b) => a.conditions - b.conditions,
-            sortDirections: ['descend', 'ascend'],
+            sortDirections: ['descend', 'ascend']
         },
         {
             title: 'idTypeVc',
@@ -193,7 +186,7 @@ const Vorcher = () => {
             width: '20%',
             ...getColumnSearchProps('idTypeVc'),
             sorter: (a, b) => a.idTypeVc.length - b.idTypeVc.length,
-            sortDirections: ['descend', 'ascend'],
+            sortDirections: ['descend', 'ascend']
         },
         {
             title: 'Action',
@@ -201,24 +194,27 @@ const Vorcher = () => {
             key: 'x',
             width: '15%',
             render: (_, record) => (
-                <Space size="middle">
+                <Space size='middle'>
                     <Link to={`/admin/update/${record.key}`}>
-                        <Button className='btn-edit text-[#30D200] border-[#31d200cb] hover:text-[#31d200ba] hover:border-[#30D200] active:border-[#30D200]' >Edit</Button>
+                        <Button className='btn-edit text-[#30D200] border-[#31d200cb] hover:text-[#31d200ba] hover:border-[#30D200] active:border-[#30D200]'>
+                            Edit
+                        </Button>
                     </Link>
                     <Popconfirm
-                        title="Are you sure to delete this product?"
+                        title='Are you sure to delete this product?'
                         onConfirm={() => confirmDelete(record.key)}
                         onCancel={cancelDelete}
-                        okText="Yes"
-                        cancelText="No"
+                        okText='Yes'
+                        cancelText='No'
                     >
-                        <Button type="primary" danger>Delete</Button>
+                        <Button type='primary' danger>
+                            Delete
+                        </Button>
                     </Popconfirm>
                 </Space>
-            ),
-        },
-
-    ];
+            )
+        }
+    ]
     return (
         <div>
             <Table className='text-center' columns={columns} bordered dataSource={data} />

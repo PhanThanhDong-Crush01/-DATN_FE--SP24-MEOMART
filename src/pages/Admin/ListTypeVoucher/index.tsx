@@ -1,6 +1,7 @@
 import React from 'react'
 import '@/styles/Cate.css'
 import { Link } from 'react-router-dom'
+import { IoMdAdd } from 'react-icons/io'
 
 type Props = {}
 
@@ -14,10 +15,10 @@ const ListTypeVoucher = (props: Props) => {
                         <Link to={'/'}>
                             <button
                                 // type='submit'
-                                className='w-32 px-12 py-2 pl-2 border-1 border-gray-300 rounded bg-white-100 text-white'
+                                className='w-32 px-10 py-4 pl-4 border-1 border-gray-100 rounded bg-white-100 text-white'
                                 style={{ backgroundColor: 'blue', width: '15%' }}
                             >
-                                ADD
+                                <IoMdAdd />
                             </button>
                         </Link>
                     </div>
@@ -28,7 +29,7 @@ const ListTypeVoucher = (props: Props) => {
                         <tr>
                             <th>ID</th>
                             <th>TÊN VOUCHER</th>
-                            <th>ACTION</th>
+                            <th>HÀNH ĐỘNG</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,27 +37,28 @@ const ListTypeVoucher = (props: Props) => {
                         <td>Voucher 1</td>
 
                         <td
-                            className='border-1 border-gray-300 rounded bg-white-150 text-white'
+                            className='border-1 border-gray-300 bg-white-150 text-white'
                             colSpan={2}
                             style={{ padding: 0 }}
                         >
                             <Link to={'/'}>
                                 <button
-                                    className='w-24 border-1 border-gray-300 rounded bg-white-150 text-white'
+                                    className=' border-1 border-gray-300 rounded bg-white-150 text-white'
                                     // type='submit'
-                                    style={{ backgroundColor: 'blue', width: '20%' }}
+                                    style={{ backgroundColor: 'blue', width: '10%', padding: '5px 8px' }}
                                 >
-                                    SỬA
+                                    Sửa
                                 </button>
                             </Link>
                             &nbsp;
                             <Link to={'/'}>
                                 <button
                                     // type='submit'
-                                    className='w-24 border-1 border-gray-300 rounded bg-white-150 text-white'
-                                    style={{ backgroundColor: 'red', width: '20%' }}
+                                    className=' border-1 border-gray-300 rounded bg-white-150 text-white'
+                                    // type='submit'
+                                    style={{ backgroundColor: 'red', width: '10%', padding: '5px 8px' }}
                                 >
-                                    XÓA
+                                    Xóa
                                 </button>
                             </Link>
                         </td>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Icon } from '@iconify/react'
 import '../../styles/HearderAdmin.css'
+import { FaSearch } from 'react-icons/fa'
 
 const HeaderAdminComponents = () => {
     const [isDarkMode, setIsDarkMode] = useState(false)
@@ -15,8 +16,10 @@ const HeaderAdminComponents = () => {
                 <header className='hd__admin shadow-xl'>
                     <div className='hd__search'>
                         <form className='form__search'>
-                            <button type='submit'>Search</button>
-                            <input type='search' placeholder='Search...' />
+                            <button className='form__search_button' type='submit'>
+                                <FaSearch />
+                            </button>
+                            <input className='form__search_input' type='search' placeholder='Search...' />
                         </form>
                     </div>
                     <div className='hd__func'>
