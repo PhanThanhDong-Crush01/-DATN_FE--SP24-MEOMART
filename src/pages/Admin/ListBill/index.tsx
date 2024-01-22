@@ -1,80 +1,259 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import { Button, Input, Space, Table, Tag } from 'antd'
+import type { InputRef, TableColumnType, TableProps } from 'antd'
+import Title from 'antd/es/typography/Title'
+import { FilterDropdownProps } from 'antd/es/table/interface'
+import { SearchOutlined } from '@ant-design/icons'
 
-type Props = {}
+interface DataType {
+    key: string
+    idUser: number
+    money: string
+    date: string
+    address: string
+    tel: string
+    idVc: number
+    paymentMethods: string
+    paymentStatus: string[]
+    orderStatus: string[]
+}
+type DataIndex = keyof DataType
 
-const ListBill = (props: Props) => {
+const data: DataType[] = [
+    {
+        key: '1',
+        idUser: 1,
+        money: '45.000 VND',
+        date: '12/1/2024',
+        address: 'ngõ 71 Phương Canh',
+        tel: '0334370130',
+        idVc: 3,
+        paymentMethods: 'nhận tiền khi giao hàng',
+        paymentStatus: ['Chưa thanh toán'],
+        orderStatus: ['Đang giao hàng']
+    },
+    {
+        key: '1',
+        idUser: 2,
+        money: '45.000 VND',
+        date: '12/1/2024',
+        address: 'ngõ 71 Phương Canh',
+        tel: '0334370130',
+        idVc: 3,
+        paymentMethods: 'nhận tiền khi giao hàng',
+        paymentStatus: ['Chưa thanh toán'],
+        orderStatus: ['Chờ xác nhận']
+    }
+]
+const onChange: TableProps<DataType>['onChange'] = (pagination, filters, sorter, extra) => {
+    console.log('params', pagination, filters, sorter, extra)
+}
+const App: React.FC = () => {
+    const [searchText, setSearchText] = useState('')
+    const [searchedColumn, setSearchedColumn] = useState('')
+    const searchInput = useRef<InputRef>(null)
+
+    const handleSearch = (selectedKeys: string[], confirm: FilterDropdownProps['confirm'], dataIndex: DataIndex) => {
+        confirm()
+        setSearchText(selectedKeys[0])
+        setSearchedColumn(dataIndex)
+    }
+
+    const handleReset = (clearFilters: () => void) => {
+        clearFilters()
+        setSearchText('')
+    }
+
+    const getColumnSearchProps = (dataIndex: DataIndex): TableColumnType<DataType> => ({
+        filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters, close }) => (
+            <div style={{ padding: 8 }} onKeyDown={(e) => e.stopPropagation()}>
+                <Input
+                    ref={searchInput}
+                    placeholder={`Search ${dataIndex}`}
+                    value={selectedKeys[0]}
+                    onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+                    onPressEnter={() => handleSearch(selectedKeys as string[], confirm, dataIndex)}
+                    style={{ marginBottom: 8, display: 'block' }}
+                />
+                <Space>
+                    <Button
+                        type='primary'
+                        onClick={() => handleSearch(selectedKeys as string[], confirm, dataIndex)}
+                        icon={<SearchOutlined />}
+                        size='small'
+                        style={{ width: 90 }}
+                    >
+                        Search
+                    </Button>
+                    <Button
+                        onClick={() => clearFilters && handleReset(clearFilters)}
+                        size='small'
+                        style={{ width: 90 }}
+                    >
+                        Reset
+                    </Button>
+                    <Button
+                        type='link'
+                        size='small'
+                        onClick={() => {
+                            confirm({ closeDropdown: false })
+                            setSearchText((selectedKeys as string[])[0])
+                            setSearchedColumn(dataIndex)
+                        }}
+                    >
+                        Filter
+                    </Button>
+                    <Button
+                        type='link'
+                        size='small'
+                        onClick={() => {
+                            close()
+                        }}
+                    >
+                        close
+                    </Button>
+                </Space>
+            </div>
+        ),
+        filterIcon: (filtered: boolean) => <SearchOutlined style={{ color: filtered ? '#1677ff' : undefined }} />,
+        onFilter: (value, record) =>
+            record[dataIndex]
+                .toString()
+                .toLowerCase()
+                .includes((value as string).toLowerCase()),
+        onFilterDropdownOpenChange: (visible) => {
+            if (visible) {
+                setTimeout(() => searchInput.current?.select(), 100)
+            }
+        }
+        // render: (text) =>
+        //     searchedColumn === dataIndex ? (
+        //         <Highlighter
+        //             highlightStyle={{ backgroundColor: '#ffc069', padding: 0 }}
+        //             searchWords={[searchText]}
+        //             autoEscape
+        //             textToHighlight={text ? text.toString() : ''}
+        //         />
+        //     ) : (
+        //         text
+        //     )
+    })
+    const columns: TableProps<DataType>['columns'] = [
+        {
+            title: 'Mã khách hàng',
+            dataIndex: 'idUser',
+            key: 'idUser',
+            // render: (text) => <a>{text}</a>,
+            ...getColumnSearchProps('idUser')
+        },
+        {
+            title: 'Tổng tiền',
+            dataIndex: 'money',
+            key: 'money'
+        },
+        {
+            title: 'Ngày đặt',
+            dataIndex: 'date',
+            key: 'date'
+        },
+        {
+            title: 'Địa chỉ',
+            dataIndex: 'address',
+            key: 'address'
+        },
+        {
+            title: 'Số điện thoại',
+            dataIndex: 'tel',
+            key: 'tel'
+        },
+        {
+            title: 'Mã vận chuyển',
+            dataIndex: 'idVc',
+            key: 'idVc'
+        },
+        {
+            title: 'Phương thức thanh toán',
+            dataIndex: 'paymentMethods',
+            key: 'paymentMethods'
+        },
+
+        {
+            title: 'Trạng thái thanh toán',
+            key: 'paymentStatus',
+            dataIndex: 'paymentStatus',
+            filters: [
+                { text: 'Chưa thanh toán', value: 'Chưa thanh toán' },
+                { text: 'Đã thanh toán', value: 'Đã thanh toán' }
+            ],
+            onFilter: (value: string, record) => record.paymentStatus.indexOf(value) === 0,
+            width: '20%',
+            render: (_, { paymentStatus }) => (
+                <>
+                    {paymentStatus.map((paymentStatus) => {
+                        let color = paymentStatus.length > 5 ? 'geekblue' : 'green'
+                        if (paymentStatus === 'loser') {
+                            color = 'volcano'
+                        }
+                        return (
+                            <Tag color={color} key={paymentStatus}>
+                                {paymentStatus.toUpperCase()}
+                            </Tag>
+                        )
+                    })}
+                </>
+            )
+        },
+        {
+            title: 'Trạn thái đơn hàng',
+            key: 'orderStatus',
+            dataIndex: 'orderStatus',
+            filters: [
+                { text: 'Chờ xác nhận', value: 'Chờ xác nhận' },
+                { text: 'Chuẩn bị hàng', value: 'Chuẩn bị hàng' },
+                { text: 'Đang giao hàng', value: 'Đang giao hàng' },
+                { text: 'Giao hàng thành công', value: 'Giao hàng thành công' }
+            ],
+            onFilter: (value: string, record) => record.orderStatus.indexOf(value) === 0,
+            // sorter: (a, b) => a.orderStatus.length - b.orderStatus.length,
+            // sortDirections: ['descend'],
+            // width: '20%',
+
+            render: (_, { orderStatus }) => (
+                <>
+                    {orderStatus.map((orderStatus) => {
+                        let color = orderStatus.length > 5 ? 'green' : 'geekblue'
+                        if (orderStatus === 'loser') {
+                            color = 'volcano'
+                        }
+                        return (
+                            <Tag color={color} key={orderStatus}>
+                                {orderStatus.toUpperCase()}
+                            </Tag>
+                        )
+                    })}
+                </>
+            )
+        }
+        // {
+        //     title: 'Action',
+        //     key: 'action',
+        //     render: (_, record) => (
+        //         <Space size='middle'>
+        //             <a>Invite {record.name}</a>
+        //             <a>Delete</a>
+        //         </Space>
+        //     )
+        // }
+    ]
     return (
-        <div className='rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark mx-2 my-2'>
-            <div className='py-6 px-4 md:px-6 xl:px-7.5'>
-                <h4 className='text-2xl font-bold text-black dark:text-white'>List Bill</h4>
-            </div>
-            <div className='grid grid-cols-9 border-t  border-stroke py-4.5 px-2 dark:border-strokedark sm:grid-cols-9 md:px-6 2xl:px-7.5 font-thin text-base'>
-                <div className='col-span-1 flex items-center'>
-                    <p className='font-medium'>Mã Bill</p>
-                </div>
-                <div className='col-span-1 hidden items-center sm:flex'>
-                    <p className='font-medium'>Mã User</p>
-                </div>
-                <div className='col-span-1 flex items-center'>
-                    <p className='font-medium'>Tổng tiền</p>
-                </div>
-                <div className='col-span-1 flex items-center'>
-                    <p className='font-medium'>Thời gian</p>
-                </div>
-                <div className='col-span-1 flex items-center'>
-                    <p className='font-medium'>Địa chỉ</p>
-                </div>
-                <div className='col-span-1 flex items-center'>
-                    <p className='font-medium'>Mã vận chuyển</p>
-                </div>
-                <div className='col-span-1 flex items-center'>
-                    <p className='font-medium'>Phương thức thanh toán</p>
-                </div>
-                {/*  */}
-                <div className='col-span-1 flex items-center'>
-                    <p className='font-medium'>Trạng thái thanh toán</p>
-                </div>
-                {/*  */}
-                <div className='col-span-1 flex items-center'>
-                    <p className='font-medium'>Tình trạng đơn hàng</p>
-                </div>
-            </div>
-            <div className='grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-9 md:px-6 2xl:px-7.5 font-thin text-xs my-5'>
-                <div className='col-span-1 flex items-center mt-2'>
-                    <a href=''>
-                        {' '}
-                        <p className='font-medium'>343</p>
-                    </a>
-                </div>
-                <div className='col-span-1 hidden items-center sm:flex mt-2'>
-                    <p className='font-medium'>445</p>
-                </div>
-                <div className='col-span-1 flex items-center mt-2'>
-                    <p className='font-medium'>34.000 VND</p>
-                </div>
-                <div className='col-span-1 flex items-center mt-2'>
-                    <p className='font-medium'>5.00 12/1/2024</p>
-                </div>
-                <div className='col-span-1 flex items-center mt-2'>
-                    <p className='font-medium '>ngõ 71 Phương Canh Nam Từ Liêm</p>
-                </div>
-                <div className='col-span-1 flex items-center mt-2'>
-                    <p className='font-medium mx-5'>343</p>
-                </div>
-                <div className='col-span-1 flex items-center mt-2'>
-                    <p className='font-medium'>Thanh toán khi nhận hàng</p>
-                </div>
-                <div className='col-span-1 flex items-center mt-2'>
-                    <p className='font-medium border-2 border-red-300 rounded bg-red-400 text-white '>
-                        Chưa thanh toán
-                    </p>
-                </div>
-                <div className='col-span-1 flex items-center mt-2'>
-                    <p className='font-medium border-2 border-red-300 rounded bg-red-400 text-white'>Chờ xác nhận</p>
-                </div>
-            </div>
-        </div>
+        <>
+            <Title level={2}>Danh sách hóa đơn</Title>
+            <Table columns={columns} dataSource={data} onChange={onChange} />
+        </>
     )
 }
 
-export default ListBill
+export default App
+function getColumnSearchProps(arg0: string): import('antd').TableColumnGroupType<DataType> | TableColumnType<DataType> {
+    throw new Error('Function not implemented.')
+}
