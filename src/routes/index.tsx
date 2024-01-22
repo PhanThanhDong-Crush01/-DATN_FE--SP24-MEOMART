@@ -4,7 +4,7 @@ import Dashboard from '@/pages/Admin/Dashboard'
 import ListBill from '@/pages/Admin/ListBill'
 import BillDetail from '@/pages/Admin/ListBill/BillDetail'
 import ListCategory from '@/pages/Admin/Category'
-import ListProducts from '@/pages/Admin/ListProducts'
+import ListProducts from '@/pages/Admin/Products'
 import ListTypeVoucher from '@/pages/Admin/ListTypeVoucher'
 import ListVoucher from '@/pages/Admin/ListVoucher'
 import SigninPage from '@/pages/Client/AuthPage/SigninPage'
@@ -23,6 +23,7 @@ import ShopPage from '@/pages/Client/ShopPage'
 import { Route, Routes } from 'react-router-dom'
 import AddCategory from '@/pages/Admin/Category/AddCategory'
 import EditCategory from '@/pages/Admin/Category/EditCategory'
+import AddProduct from '@/pages/Admin/Products/AddProduct'
 
 const Routers = () => {
     return (
@@ -45,9 +46,10 @@ const Routers = () => {
             <Route path='signup' element={<SignupPage />} />
             <Route path='admin' element={<AdminLayout />}>
                 <Route index element={<Dashboard />} />
+                <Route path='/admin/dashboard' element={<Dashboard />} />
                 <Route path='/admin/products' element={<ListProducts />} />
                 {/* <Route path='/admin/products/:id/edit' element={<EditProduct />}/> */}
-                {/* <Route path='/admin/products/add' element={<AddProduct />}/> */}
+                <Route path='/admin/products/add' element={<AddProduct />} />
                 <Route path='/admin/categories' element={<ListCategory />} />
                 {/* <Route path='/admin/categories/:id/edit' element={<EditCategory />}/> */}
                 <Route path='/admin/categories/edit/:id' element={<EditCategory />} />
