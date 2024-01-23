@@ -1,12 +1,13 @@
 import { useRef, useState } from 'react';
-import { DeleteOutlined, EditOutlined, PlusCircleOutlined, PlusSquareOutlined, SearchOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, PlusCircleOutlined, SearchOutlined, UploadOutlined } from '@ant-design/icons';
 import type { GetRef, TableColumnsType, TableColumnType } from 'antd';
 import { Button, Form, Input, InputNumber, Popconfirm, Select, Space, Table, message } from 'antd';
 import type { FilterDropdownProps } from 'antd/es/table/interface';
 import Highlighter from 'react-highlight-words';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
+import Dragger from 'antd/es/upload/Dragger';
+import axios from 'axios';
 import { Option } from 'antd/es/mentions';
 import ModalForm from '@/components/ModalForm/ModalForm';
 
@@ -14,12 +15,12 @@ type InputRef = GetRef<typeof Input>;
 
 interface DataType {
     key: string;
+    name: string;
+    date: string;
+    category: string;
+    image: string;
+    sold: number;
     status: string;
-    codeVc: number;
-    decrease: string;
-    expiry: string;
-    conditions: number;
-    idTypeVoucher: string;
 }
 
 type DataIndex = keyof DataType;
@@ -27,24 +28,34 @@ type DataIndex = keyof DataType;
 const data: DataType[] = [
     {
         key: '1',
-        status: 'John Brown',
-        codeVc: 20,
-        decrease: "32%",
-        expiry: "10/01/02020 - 15/01/02020",
-        conditions: 45,
-        idTypeVoucher: "Giảm 15%"
+        name: 'John Brown',
+        category: 'New York No. 1 Lake Park',
+        date: "12/2/2222",
+        sold: 727,
+        status: "còn hàng",
+        image: 'https://laptopdell.com.vn/wp-content/uploads/2022/07/laptop_lenovo_legion_s7_8.jpg',
     },
     {
         key: '2',
-        status: 'John Brown',
-        codeVc: 20,
-        decrease: "32%",
-        expiry: "10/01/02020 - 15/01/02020",
-        conditions: 45,
-        idTypeVoucher: "Giảm 15%"
+        name: 'Joe Black',
+        date: "12/2/2222",
+        category: 'London No. 1 Lake Park',
+        sold: 727,
+        status: "hết hàng",
+        image: 'https://laptopdell.com.vn/wp-content/uploads/2022/07/laptop_lenovo_legion_s7_8.jpg',
     },
+    {
+        key: '3',
+        name: 'Jim Green',
+        date: "12/2/2222",
+        category: 'Sydney No. 1 Lake Park',
+        sold: 727,
+        status: "hết hàng",
+        image: 'https://laptopdell.com.vn/wp-content/uploads/2022/07/laptop_lenovo_legion_s7_8.jpg',
+    },
+
 ];
-const Vorcher = () => {
+const Product = () => {
     const [searchText, setSearchText] = useState('');
     const [searchedColumn, setSearchedColumn] = useState('');
     const searchInput = useRef<InputRef>(null);
@@ -155,51 +166,54 @@ const Vorcher = () => {
             width: '2%',
         },
         {
+            title: 'Ảnh',
+            dataIndex: 'image',
+            key: 'image',
+            width: '5%',
+            render: (image) => <img src={image} alt="Product" width={70} />,
+        },
+        {
+            title: 'Tên',
+            dataIndex: 'name',
+            key: 'name',
+            width: '20%',
+            ...getColumnSearchProps('name'),
+        },
+        {
+            title: 'Danh Mục',
+            dataIndex: 'category',
+            key: 'category',
+            width: '15%',
+            ...getColumnSearchProps('category'),
+        },
+        {
+            title: 'Ngày',
+            dataIndex: 'date',
+            key: 'date',
+            width: '10%',
+            ...getColumnSearchProps('date'),
+            sorter: (a, b) => a.date.length - b.date.length,
+            sortDirections: ['descend', 'ascend'],
+        },
+        {
+            title: 'Đã bán',
+            dataIndex: 'sold',
+            key: 'sold',
+            width: '10%',
+            ...getColumnSearchProps('sold'),
+            sorter: (a, b) => a.sold - b.sold,
+            sortDirections: ['descend', 'ascend'],
+        },
+        {
             title: 'Trạng thái',
             dataIndex: 'status',
             key: 'status',
-            width: '20%',
-        },
-        {
-            title: 'Mã Voucher',
-            dataIndex: 'codeVc',
-            key: 'codeVc',
-            width: '20%',
-            ...getColumnSearchProps('codeVc'),
-        },
-        {
-            title: 'Giảm bớt',
-            dataIndex: 'decrease',
-            key: 'decrease',
             width: '10%',
-            ...getColumnSearchProps('decrease'),
-        },
-        {
-            title: 'Hết hạn',
-            dataIndex: 'expiry',
-            key: 'expiry',
-            width: '20%',
-            ...getColumnSearchProps('expiry'),
-            sorter: (a, b) => a.expiry.length - b.expiry.length,
+            ...getColumnSearchProps('status'),
+            sorter: (a, b) => a.status.length - b.status.length,
             sortDirections: ['descend', 'ascend'],
+            render: (status) => <p className='text-green-500'>{status}</p>,
         },
-        {
-            title: 'Điều kiện',
-            dataIndex: 'conditions',
-            key: 'conditions',
-            width: '10%',
-            ...getColumnSearchProps('conditions'),
-            sorter: (a, b) => a.conditions - b.conditions,
-            sortDirections: ['descend', 'ascend'],
-        },
-
-        {
-            title: 'Loại Voucher',
-            dataIndex: 'idTypeVoucher',
-            key: 'idTypeVoucher',
-            width: '20%',
-        },
-
         {
             title: 'Hành động',
             dataIndex: '',
@@ -243,6 +257,7 @@ const Vorcher = () => {
         },
 
     ];
+
     const cancel = () => {
         message.error('Đã hủy!');
     };
@@ -330,7 +345,7 @@ const Vorcher = () => {
         <div>
             <div className='flex justify-between items-center mx-[50px]'>
                 <div>
-                    <p className='text-[20px]'>Phiếu giảm giá </p>
+                    <p className='text-[20px]'>Sản Phẩm </p>
                 </div>
                 <div className="flex justify-end mb-2">
                     <Button
@@ -368,6 +383,21 @@ const Vorcher = () => {
                         </Form.Item>
                     )}
                     <div className=" w-full ">
+                        <Form.Item name="name" label="Tên" rules={[{ required: true }, { whitespace: true, message: '${label} is required!' }]}>
+                            <Input.TextArea rows={2} placeholder="Name " />
+                        </Form.Item>
+                        <Form.Item name="price" label="Giá" rules={[{ required: true, type: 'number', min: 0 }]}>
+                            <InputNumber size="large" placeholder="Price" style={{ width: '100%' }} />
+                        </Form.Item>
+
+                        <Form.Item name="images" label="Ảnh pet" rules={[{ required: true }]}>
+                            <Dragger multiple listType="picture" customRequest={customRequest} >
+                                <Button icon={<UploadOutlined />}>Thêm Ảnh</Button>
+                            </Dragger>
+                        </Form.Item>
+                    </div>
+
+                    <div className="w-full">
                         <Form.Item label="Trạng thái" rules={[{ required: true }]}>
                             <Select size="large" placeholder="---- Status ----">
                                 <Option key={"1"} value={"true"}>
@@ -378,50 +408,20 @@ const Vorcher = () => {
                                 </Option>
                             </Select>
                         </Form.Item>
-                        <Form.Item name="expiry" label="Hết hạn" rules={[{ required: true }, { whitespace: true, message: '${label} is required!' }]}>
-                            <Input.TextArea rows={2} placeholder="expiry " />
-                        </Form.Item>
-                        <Form.Item name="decrease" label="Giảm bớt" rules={[{ required: true, type: 'number', min: 0 }]}>
-                            <InputNumber size="large" placeholder="decrease" style={{ width: '100%' }} />
-                        </Form.Item>
 
-                        {/* <Form.Item name="images" label="Ảnh pet" rules={[{ required: true }]}>
-                            <Dragger multiple listType="picture" customRequest={customRequest} >
-                                <Button icon={<UploadOutlined />}>Thêm Ảnh</Button>
-                            </Dragger>
-                        </Form.Item> */}
-                    </div>
 
-                    <div className="w-full">
-
-                        <Form.Item name="codeVc" label="Mã Voucher" rules={[{ required: true, type: 'number', min: 0 }]}>
-                            <InputNumber size="large" placeholder="codeVc" style={{ width: '100%' }} />
+                        <Form.Item name="sold" label="Đã bán" rules={[{ required: true, type: 'number', min: 0 }]}>
+                            <InputNumber size="large" placeholder="sold" style={{ width: '100%' }} />
                         </Form.Item>
 
-                        <Form.Item name="conditions" label="Điều kiện" rules={[{ required: true, type: 'number', min: 0 }]}>
-                            <InputNumber size="large" placeholder="conditions" style={{ width: '100%' }} />
-                        </Form.Item>
 
                         <Form.Item
-                            name="idTypeVoucher"
-                            label="Loại voucher"
-                            rules={[
-                                { required: true, message: '' },
-                            ]}
-                        >
-                            <Select placeholder="Chọn danh mục">
-                                <Option value="khuyenMai">khuyenMai</Option>
-                                <Option value="giamGia">giamGia</Option>
-                            </Select>
-                        </Form.Item>
-
-                        {/* <Form.Item
                             name="description"
-                            label="Thông Tin Sân"
+                            label="Thông Tin Sản Phẩm"
                             rules={[{ required: true }, { whitespace: true, message: '${label} is required!' }]}
                         >
                             <Input.TextArea rows={4} placeholder="Description" />
-                        </Form.Item> */}
+                        </Form.Item>
 
 
                     </div>
@@ -431,4 +431,4 @@ const Vorcher = () => {
     )
 }
 
-export default Vorcher
+export default Product

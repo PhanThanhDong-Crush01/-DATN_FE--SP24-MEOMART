@@ -5,9 +5,8 @@ type Props = {}
 
 const SidebarAdminComponent = (props: Props) => {
     return (
-        <div className=''>
-            <div className=''>
-                <div className=' flex flex-col top-0 left-0 w-64 bg-white h-full border-r'>
+            <div className='SidebarAdminComponent' style={{ height: '100vh' }}>
+                <div className=' flex flex-col h-full border-r' style={{ background: '#1C2434', height: '100%', color: "white" }}>
                     <div className='flex items-center justify-center h-14 border-b'>
                         <img
                             src='https://matpetfamily.com/wp-content/uploads/2019/11/m%E1%BA%ADt-pet-logo-300x297.png'
@@ -25,8 +24,8 @@ const SidebarAdminComponent = (props: Props) => {
                             </li>
                             <li>
                                 <Link
-                                    to='#'
-                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
+                                    to='dashboard'
+                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
                                 >
                                     <span className='inline-flex justify-center items-center ml-4'>
                                         <svg
@@ -44,13 +43,15 @@ const SidebarAdminComponent = (props: Props) => {
                                             ></path>
                                         </svg>
                                     </span>
-                                    <span className='ml-2 text-sm tracking-wide truncate'>Dashboard</span>
+                                    <span className='ml-2 text-sm tracking-wide truncate' style={{ color: 'white' }}>
+                                        Dashboard
+                                    </span>
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     to='/admin/products'
-                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
+                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
                                 >
                                     <span className='inline-flex justify-center items-center ml-4'>
                                         <svg
@@ -68,13 +69,15 @@ const SidebarAdminComponent = (props: Props) => {
                                             ></path>
                                         </svg>
                                     </span>
-                                    <span className='ml-2 text-sm tracking-wide truncate'>List Product</span>
+                                    <span className='ml-2 text-sm tracking-wide truncate' style={{ color: 'white' }}>
+                                        List Product
+                                    </span>
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     to='/admin/categories'
-                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
+                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
                                 >
                                     <span className='inline-flex justify-center items-center ml-4'>
                                         <svg
@@ -92,24 +95,29 @@ const SidebarAdminComponent = (props: Props) => {
                                             ></path>
                                         </svg>
                                     </span>
-                                    <span className='ml-2 text-sm tracking-wide truncate'>List Category</span>
+                                    <span className='ml-2 text-sm tracking-wide truncate' style={{ color: 'white' }}>
+                                        List Category
+                                    </span>
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     to='/admin/voucher'
-                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
+                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
                                 >
                                     <span className='inline-flex justify-center items-center ml-4'>
                                         <Icon icon='carbon:product' />
                                     </span>
-                                    <span className='ml-2 text-sm tracking-wide truncate'> List Voucher</span>
+                                    <span className='ml-2 text-sm tracking-wide truncate' style={{ color: 'white' }}>
+                                        {' '}
+                                        List Voucher
+                                    </span>
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     to='/admin/type_voucher'
-                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
+                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
                                 >
                                     <span className='inline-flex justify-center items-center ml-4'>
                                         <svg
@@ -127,13 +135,15 @@ const SidebarAdminComponent = (props: Props) => {
                                             ></path>
                                         </svg>
                                     </span>
-                                    <span className='ml-2 text-sm tracking-wide truncate'>List Type Voucher</span>
+                                    <span className='ml-2 text-sm tracking-wide truncate' style={{ color: 'white' }}>
+                                        List Type Voucher
+                                    </span>
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     to='/admin/bill'
-                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
+                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
                                 >
                                     <span className='inline-flex justify-center items-center ml-4'>
                                         <svg
@@ -151,7 +161,9 @@ const SidebarAdminComponent = (props: Props) => {
                                             ></path>
                                         </svg>
                                     </span>
-                                    <span className='ml-2 text-sm tracking-wide truncate'>List Bill</span>
+                                    <span className='ml-2 text-sm tracking-wide truncate' style={{ color: 'white' }}>
+                                        List Bill
+                                    </span>
                                 </Link>
                             </li>
 
@@ -181,13 +193,15 @@ const SidebarAdminComponent = (props: Props) => {
                                             ></path>
                                         </svg>
                                     </span>
-                                    <span className='ml-2 text-sm tracking-wide truncate'>Profile</span>
+                                    <span className='ml-2 text-sm tracking-wide truncate' style={{ color: 'white' }}>
+                                        Profile
+                                    </span>
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     to='#'
-                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
+                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
                                 >
                                     <span className='inline-flex justify-center items-center ml-4'>
                                         <svg
@@ -211,13 +225,15 @@ const SidebarAdminComponent = (props: Props) => {
                                             ></path>
                                         </svg>
                                     </span>
-                                    <span className='ml-2 text-sm tracking-wide truncate'>Settings</span>
+                                    <span className='ml-2 text-sm tracking-wide truncate' style={{ color: 'white' }}>
+                                        Settings
+                                    </span>
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     to='#'
-                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
+                                    className='relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-white-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6'
                                 >
                                     <span className='inline-flex justify-center items-center ml-4'>
                                         <svg
@@ -235,14 +251,15 @@ const SidebarAdminComponent = (props: Props) => {
                                             ></path>
                                         </svg>
                                     </span>
-                                    <span className='ml-2 text-sm tracking-wide truncate'>Logout</span>
+                                    <span className='ml-2 text-sm tracking-wide truncate' style={{ color: 'white' }}>
+                                        Logout
+                                    </span>
                                 </Link>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

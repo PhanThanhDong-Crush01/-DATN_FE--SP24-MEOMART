@@ -9,3 +9,23 @@ body {
     box-sizing: border-box;
     font-size: 18px;
 }
+/* button[type='submit'] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: none;
+    padding: 10px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} */
+
+.input-column {
+  width: 500px; /* Đặt chiều rộng mong muốn của cột */
+  max-width: 600px; /* Đặt chiều rộng tối đa để không bị thay đổi */
+  overflow: hidden; /* Ẩn nội dung vượt quá chiều rộng */
+  white-space: nowrap; /* Ngăn chặn xuống dòng */
+  text-overflow: ellipsis; /* Hiển thị dấu chấm ở cuối nếu có nội dung quá chiều rộng */
+}
